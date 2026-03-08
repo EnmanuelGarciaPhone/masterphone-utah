@@ -16,7 +16,21 @@ body {font-family:'Inter',sans-serif;}
 </style>
 
 <script>
-function switchLanguage(lang){
+function switchLanguage(lang){ 
+  
+  function setView(mode){
+
+if(mode === 'mobile'){
+document.body.style.maxWidth = "420px";
+document.body.style.margin = "0 auto";
+}
+
+if(mode === 'desktop'){
+document.body.style.maxWidth = "100%";
+document.body.style.margin = "0";
+}
+
+}
 document.querySelectorAll('[data-en]').forEach(el=>{
 el.innerHTML = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-es');
 });
